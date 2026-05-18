@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FLOW-RIG // PRECISION SETUP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#ff5f1f",
+                    "inverse-surface": "#e2e2e2",
+                    "tertiary-fixed": "#e3e2e7",
+                    "on-tertiary": "#2f3034",
+                    "surface-container-lowest": "#0e0e0e",
+                    "outline": "#aa897f",
+                    "on-error-container": "#ffdad6",
+                    "on-tertiary-container": "#2b2c30",
+                    "on-primary": "#5c1900",
+                    "on-secondary-fixed": "#1a1c1f",
+                    "on-error": "#690005",
+                    "surface-dim": "#131313",
+                    "primary-fixed-dim": "#ffb59c",
+                    "primary": "#ffb59c",
+                    "error": "#ffb4ab",
+                    "inverse-on-surface": "#303030",
+                    "on-secondary": "#2f3034",
+                    "inverse-primary": "#ab3600",
+                    "on-surface": "#e2e2e2",
+                    "on-primary-container": "#561700",
+                    "on-background": "#e2e2e2",
+                    "primary-fixed": "#ffdbcf",
+                    "surface-container-high": "#2a2a2a",
+                    "on-primary-fixed": "#390c00",
+                    "on-secondary-fixed-variant": "#45474b",
+                    "on-secondary-container": "#b4b5ba",
+                    "secondary-fixed-dim": "#c6c6cb",
+                    "on-tertiary-fixed-variant": "#46464b",
+                    "outline-variant": "#5b4138",
+                    "on-primary-fixed-variant": "#832700",
+                    "secondary-fixed": "#e2e2e7",
+                    "surface-container-low": "#1b1b1b",
+                    "background": "#131313",
+                    "secondary": "#c6c6cb",
+                    "surface-container-highest": "#353535",
+                    "surface": "#131313",
+                    "tertiary": "#c6c6cb",
+                    "surface-container": "#1f1f1f",
+                    "on-tertiary-fixed": "#1a1b1f",
+                    "tertiary-container": "#939398",
+                    "error-container": "#93000a",
+                    "surface-tint": "#ffb59c",
+                    "on-surface-variant": "#e3bfb3",
+                    "surface-bright": "#393939",
+                    "secondary-container": "#45474b",
+                    "surface-variant": "#353535",
+                    "tertiary-fixed-dim": "#c6c6cb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "xl": "40px",
+                    "lg": "24px",
+                    "md": "16px",
+                    "gutter": "16px",
+                    "margin": "24px",
+                    "sm": "8px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Inter"],
+                    "label-caps": ["Space Grotesk"],
+                    "body-md": ["Inter"],
+                    "display-xl": ["Inter"],
+                    "data-mono": ["Space Grotesk"]
+            },
+            "fontSize": {
+                    "headline-lg": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "data-mono": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+      .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+      .custom-scrollbar::-webkit-scrollbar-thumb { background: #5b4138; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Anchor -->
+<header class="bg-surface-container-highest dark:bg-surface-container-highest flex justify-between items-center w-full px-gutter h-16 fixed top-0 z-50 border-b border-outline-variant">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary-container" data-icon="settings_input_component">settings_input_component</span>
+<h1 class="font-display-xl text-headline-lg font-bold text-primary-container dark:text-primary-container tracking-tighter">FLOW-RIG // PRECISION</h1>
+</div>
+<div class="flex items-center gap-md">
+<span class="font-label-caps text-label-caps tracking-widest uppercase text-on-surface-variant">SYS_READY</span>
+<span class="material-symbols-outlined text-primary-container" data-icon="sensors">sensors</span>
+</div>
+</header>
+<main class="pt-20 pb-24 px-gutter min-h-screen max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left Column: Navigation & Control -->
+<aside class="hidden md:flex md:col-span-3 flex-col h-[calc(100vh-120px)] sticky top-20 border-r border-outline-variant py-lg">
+<nav class="flex flex-col gap-xs">
+<p class="font-label-caps text-label-caps text-on-surface-variant px-md mb-sm opacity-50 uppercase">System Control</p>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-150 ease-in-out font-data-mono text-data-mono" href="#">
+<span class="material-symbols-outlined" data-icon="speed">speed</span> LIVE DATA
+                </a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-150 ease-in-out font-data-mono text-data-mono" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span> HARDWARE PROFILES
+                </a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-150 ease-in-out font-data-mono text-data-mono" href="#">
+<span class="material-symbols-outlined" data-icon="camera_roll">camera_roll</span> LENS DATABASE
+                </a>
+<a class="bg-primary-container text-on-primary-container font-bold flex items-center gap-md px-md py-sm transition-all duration-150 ease-in-out font-data-mono text-data-mono" href="#">
+<span class="material-symbols-outlined" data-icon="system_update_alt">system_update_alt</span> FIRMWARE
+                </a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-150 ease-in-out font-data-mono text-data-mono" href="#">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span> SYSTEM LOGS
+                </a>
+</nav>
+</aside>
+<!-- Main Canvas: Firmware & Maintenance -->
+<div class="md:col-span-9 flex flex-col gap-lg">
+<!-- Section 1: Firmware & Calibration -->
+<section class="border border-outline-variant bg-surface-container-low p-md">
+<div class="flex justify-between items-center mb-lg border-b border-outline-variant pb-md bg-gradient-to-r from-surface-container-highest/50 to-transparent p-sm -mx-md -mt-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary-container" data-icon="precision_manufacturing">precision_manufacturing</span>
+<h2 class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface">Firmware Calibration // V.2.4.9</h2>
+</div>
+<span class="font-data-mono text-[10px] text-primary-container bg-primary-container/10 px-sm py-xs border border-primary-container">UPLOADING...</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-lg">
+<!-- Progress and Controls -->
+<div class="flex flex-col gap-md">
+<div class="space-y-sm">
+<div class="flex justify-between font-data-mono text-data-mono text-on-surface-variant">
+<span>CORE_OS_REWRITE</span>
+<span>74%</span>
+</div>
+<div class="h-1 bg-surface-container-highest w-full relative">
+<div class="absolute top-0 left-0 h-full bg-primary-container shadow-[0_0_8px_#ff5f1f]" style="width: 74%;"></div>
+</div>
+</div>
+<div class="flex flex-col gap-xs mt-sm">
+<div class="flex justify-between p-sm bg-surface-container-high border-l-2 border-primary-container">
+<span class="font-data-mono text-data-mono text-on-surface">CURRENT BUILD</span>
+<span class="font-data-mono text-data-mono text-primary-container">2.4.8-STABLE</span>
+</div>
+<div class="flex justify-between p-sm bg-surface-container-high">
+<span class="font-data-mono text-data-mono text-on-surface">TARGET BUILD</span>
+<span class="font-data-mono text-data-mono text-primary-container">2.4.9-BETA_1</span>
+</div>
+</div>
+<div class="flex gap-md mt-md">
+<button class="flex-1 bg-primary-container text-on-primary font-bold font-label-caps text-label-caps py-md px-lg hover:opacity-90 active:scale-95 transition-all duration-75 uppercase">
+                                Update Firmware
+                            </button>
+<button class="flex-1 border border-outline text-on-surface font-bold font-label-caps text-label-caps py-md px-lg hover:bg-surface-container-highest active:scale-95 transition-all duration-75 uppercase">
+                                Diagnostic Run
+                            </button>
+</div>
+</div>
+<!-- Technical Logs -->
+<div class="bg-surface-container-lowest border border-outline-variant p-sm font-data-mono text-[11px] leading-tight text-on-secondary-container h-[200px] overflow-y-auto custom-scrollbar">
+<p class="text-on-surface-variant opacity-50 mb-xs">[08:42:11] INITIALIZING HANDSHAKE...</p>
+<p class="text-primary-container mb-xs">[08:42:12] HANDSHAKE SUCCESSFUL: ID_0X921</p>
+<p class="mb-xs">[08:42:15] CHECKING GIMBAL MOTOR TORQUE... [OK]</p>
+<p class="mb-xs">[08:42:18] ALIGNING INERTIAL MEASUREMENT UNIT...</p>
+<p class="mb-xs">[08:42:22] SYNCING 3-AXIS GYROSCOPE CALIBRATION...</p>
+<p class="text-primary-container mb-xs">[08:42:45] DOWNLOAD STARTED: FIRMWARE_PACK_2.4.9.ZIP</p>
+<p class="mb-xs">[08:43:01] VERIFYING CHECKSUM: A1B2-C3D4 [VALID]</p>
+<p class="animate-pulse mb-xs">[08:43:10] WRITING TO EEPROM SECTOR 0x01...</p>
+<p class="mb-xs">[08:43:12] WRITING TO EEPROM SECTOR 0x02...</p>
+<p class="mb-xs">[08:43:14] WRITING TO EEPROM SECTOR 0x03...</p>
+</div>
+</div>
+</section>
+<!-- Section 2: Setup Tutorials Hub -->
+<section class="flex flex-col gap-md">
+<div class="flex items-center justify-between border-b border-outline-variant pb-sm">
+<h3 class="font-label-caps text-label-caps uppercase tracking-tighter flex items-center gap-sm text-on-surface">
+<span class="material-symbols-outlined text-primary-container" data-icon="videocam">videocam</span>
+                        Setup Tutorials // Performance Archive
+                    </h3>
+<a class="text-[10px] font-label-caps text-on-surface-variant hover:text-primary-container transition-colors uppercase" href="#">View Library</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+<!-- Tutorial Card 1 -->
+<div class="group relative aspect-video bg-surface-container-high border border-outline-variant overflow-hidden cursor-pointer">
+<img alt="Gimbal in Action" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-300" data-alt="A professional high-speed camera gimbal rig mounted on a moving vehicle, capturing intense off-road racing action in a dusty desert environment. The lighting is high-contrast late afternoon sun, casting sharp shadows and highlighting the metallic surfaces of the rig. The aesthetic is gritty, industrial, and high-performance, featuring a primary color palette of deep blacks and tactical oranges." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmh3DHHFnfGnjoK9g9Rvs1q9lZwL_GqsKL7hRpgj9MvpOu6D95dQD90c33T-r9DwPdE2OPuE2QfKUJoHchg-Bv8f9GVcr3D--qkFnaeX45FEwGrMhriwSlDCIutS-gKzbltA2Cu4eXzpwKMUFhkNFGdMrkakxmRiF5mqFDtjSfkq5jdv2cXeG9z5_Gs56gjXlRbXRNv2NW9J_HWFLHIgq0_3eX0pfU78n5UXTSE6GXIbmKvgYDwUlHBwF7efOGoDqWcsMEAYN_F3s"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent pointer-events-none"></div>
+<div class="absolute bottom-sm left-sm right-sm flex flex-col gap-xs">
+<span class="font-label-caps text-[10px] text-primary-container bg-background/80 self-start px-xs py-[2px] border border-primary-container">LEVEL_01</span>
+<h4 class="font-data-mono text-data-mono text-on-surface leading-tight uppercase">High-Speed Tracking Setup</h4>
+</div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined text-display-xl text-primary-container" data-icon="play_circle">play_circle</span>
+</div>
+</div>
+<!-- Tutorial Card 2 -->
+<div class="group relative aspect-video bg-surface-container-high border border-outline-variant overflow-hidden cursor-pointer">
+<img alt="Calibration Detail" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-300" data-alt="Close-up detail of a technician's hands precision-tuning the brush-less motors of a carbon-fiber camera gimbal in a dark, high-tech studio workshop. Subtle orange glowing status lights on the equipment reflect off the polished surfaces. The mood is focused and professional, emphasizing the engineering and tactile nature of the equipment through a sharp, clean cinematography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXkFXjvh3vwyGMxW4YSbW5QhxnvIVm1Q_AmKIeuQNTMGwtiE0r93xiuJ59EB99LCBUBfqtNYwOp59tO03vKn3WO_yzz6dQ1bbGtZ75_q7iCYdVa-UrZ-JZ5JhVTQvU28bs8RhcWLny5Kpexnz-hsjO0rYRQxP7XAf3oPDjrdB5EO7Popb9nM0a3KNTLpBmqH2nAC6PxEFMeXRofLqmv8Mnwlywtd9ZEeKlvYjFhkke8w7GbZkVVdbvVcvuvDY75H-XrXqoXc8tIhQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent pointer-events-none"></div>
+<div class="absolute bottom-sm left-sm right-sm flex flex-col gap-xs">
+<span class="font-label-caps text-[10px] text-primary-container bg-background/80 self-start px-xs py-[2px] border border-primary-container">LEVEL_02</span>
+<h4 class="font-data-mono text-data-mono text-on-surface leading-tight uppercase">Precision Motor Balancing</h4>
+</div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined text-display-xl text-primary-container" data-icon="play_circle">play_circle</span>
+</div>
+</div>
+<!-- Tutorial Card 3 -->
+<div class="group relative aspect-video bg-surface-container-high border border-outline-variant overflow-hidden cursor-pointer">
+<img alt="Extreme Environment" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-300" data-alt="A wide cinematic shot of a heavy-duty robotic camera crane rig operating inside a modern industrial warehouse at night. Cool blue moonlight from high windows contrasts with warm safety-orange warning lights on the base of the machine. The atmosphere is quiet yet powerful, capturing the brutalist architectural beauty of high-end film production hardware in a professional environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeSazz-XUqVX3gIjosswoP12RhTdzvb-ym0jXEosmiXbQv4zz4YyrkvgFbFsYxMtH4bNR8a40cL1omR0C9qdPRhVukIj83TlTk29l1c2rvxYdvUrwQ9etKrAGtTsRqfHGTJpMSYyN2g73KmxM75IFFqdN2oxeN4_axddSnGK5SD1n0VAYT7MLh2r_AIAd7dw5HCF47TVGuNYAiJCWJQ8pOP7x4AKd5iqP584HHJwdVwNHFOQ1RcIq9cEjtJmXOVXFMZWQdJGG9ip8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent pointer-events-none"></div>
+<div class="absolute bottom-sm left-sm right-sm flex flex-col gap-xs">
+<span class="font-label-caps text-[10px] text-primary-container bg-background/80 self-start px-xs py-[2px] border border-primary-container">LEVEL_03</span>
+<h4 class="font-data-mono text-data-mono text-on-surface leading-tight uppercase">Extreme Tilt Calibration</h4>
+</div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined text-display-xl text-primary-container" data-icon="play_circle">play_circle</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface-container-lowest border-t border-outline-variant md:hidden">
+<div class="flex justify-around items-center w-full px-margin h-20">
+<a class="flex flex-col items-center justify-center text-on-secondary-container opacity-60 pt-2 pb-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-caps text-label-caps uppercase mt-1">TELEMETRY</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-container opacity-60 pt-2 pb-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span class="font-label-caps text-label-caps uppercase mt-1">RIGS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-container opacity-60 pt-2 pb-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="balance">balance</span>
+<span class="font-label-caps text-label-caps uppercase mt-1">BALANCE</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary-container border-t-2 border-primary-container pt-2 pb-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings_motion_sensor">settings_motion_mode</span>
+<span class="font-label-caps text-label-caps uppercase mt-1">CALIBRATE</span>
+</a>
+</div>
+</nav>
+</body></html>

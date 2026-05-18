@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .metallic-gradient {
+            background: linear-gradient(180deg, #D1D1D6 0%, #8E8E93 100%);
+        }
+        .inset-panel {
+            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+        }
+        .rocker-switch-active {
+            border: 1px solid #ffb59c;
+            box-shadow: 0 0 8px rgba(255, 181, 156, 0.3);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#1a1b1f",
+                        "on-error": "#690005",
+                        "primary-fixed": "#ffdbcf",
+                        "on-tertiary": "#2f3034",
+                        "on-primary-fixed-variant": "#832700",
+                        "on-surface": "#e2e2e2",
+                        "secondary-fixed": "#e2e2e7",
+                        "surface-bright": "#393939",
+                        "on-tertiary-fixed-variant": "#46464b",
+                        "tertiary": "#c6c6cb",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary-fixed-dim": "#c6c6cb",
+                        "on-background": "#e2e2e2",
+                        "secondary-container": "#45474b",
+                        "primary-container": "#ff5f1f",
+                        "tertiary-fixed-dim": "#c6c6cb",
+                        "primary-fixed-dim": "#ffb59c",
+                        "on-secondary-fixed": "#1a1c1f",
+                        "surface": "#131313",
+                        "on-surface-variant": "#e3bfb3",
+                        "background": "#131313",
+                        "on-secondary-fixed-variant": "#45474b",
+                        "inverse-on-surface": "#303030",
+                        "on-secondary-container": "#b4b5ba",
+                        "surface-variant": "#353535",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container-highest": "#353535",
+                        "surface-container": "#1f1f1f",
+                        "tertiary-container": "#939398",
+                        "on-primary-container": "#561700",
+                        "error-container": "#93000a",
+                        "on-secondary": "#2f3034",
+                        "on-primary": "#5c1900",
+                        "secondary": "#c6c6cb",
+                        "surface-container-low": "#1b1b1b",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "outline": "#aa897f",
+                        "tertiary-fixed": "#e3e2e7",
+                        "surface-dim": "#131313",
+                        "primary": "#ffb59c",
+                        "inverse-surface": "#e2e2e2",
+                        "outline-variant": "#5b4138",
+                        "inverse-primary": "#ab3600",
+                        "on-primary-fixed": "#390c00",
+                        "surface-tint": "#ffb59c",
+                        "on-tertiary-container": "#2b2c30"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "sm": "8px",
+                        "margin": "24px",
+                        "unit": "4px",
+                        "md": "16px",
+                        "gutter": "16px",
+                        "xs": "4px",
+                        "xl": "40px"
+                    },
+                    "fontFamily": {
+                        "data-mono": ["Space Grotesk"],
+                        "label-caps": ["Space Grotesk"],
+                        "headline-lg": ["Inter"],
+                        "display-xl": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "data-mono": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-lg": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar Shell -->
+<header class="bg-surface border-b border-outline-variant bg-gradient-to-b from-surface-container-high to-surface flex justify-between items-center h-16 px-gutter w-full sticky top-0 z-50">
+<div class="flex items-center gap-lg">
+<span class="font-label-caps text-label-caps tracking-widest text-primary">FLOW-RIG</span>
+<div class="hidden md:flex gap-md">
+<nav class="flex items-center gap-md">
+<a class="text-primary border-b-2 border-primary font-label-caps text-label-caps px-2 py-1" href="#">DOCS</a>
+<a class="text-secondary hover:text-primary transition-colors duration-100 font-label-caps text-label-caps px-2 py-1" href="#">FLEET</a>
+<a class="text-secondary hover:text-primary transition-colors duration-100 font-label-caps text-label-caps px-2 py-1" href="#">SYSTEMS</a>
+</nav>
+</div>
+</div>
+<div class="flex-1 max-w-xl mx-lg hidden lg:block">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-[20px]">search</span>
+<input class="w-full bg-surface-container border border-outline-variant px-10 py-2 font-data-mono text-data-mono text-on-surface focus:outline-none focus:border-primary placeholder:text-secondary-container" placeholder="SEARCH HARDWARE MANIFEST..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-secondary hover:text-primary active:scale-95 duration-75">settings</button>
+<button class="material-symbols-outlined text-secondary hover:text-primary active:scale-95 duration-75">notifications</button>
+<button class="material-symbols-outlined text-primary active:scale-95 duration-75">account_circle</button>
+</div>
+</header>
+<div class="flex h-[calc(100vh-64px)] overflow-hidden">
+<!-- SideNavBar Shell -->
+<aside class="bg-surface-container border-r border-outline-variant flex flex-col h-full py-md gap-sm w-64 shrink-0 overflow-y-auto">
+<div class="px-md mb-lg">
+<h2 class="font-label-caps text-label-caps text-on-surface">CONTROL PANEL</h2>
+<p class="font-data-mono text-[10px] text-secondary opacity-60">V2.4.0-STABLE</p>
+</div>
+<nav class="flex-1 px-sm space-y-1">
+<a class="flex items-center gap-sm px-md py-3 text-secondary hover:bg-surface-variant transition-all duration-150 font-data-mono text-data-mono uppercase" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+                    Telemetry
+                </a>
+<a class="flex items-center gap-sm px-md py-3 text-secondary hover:bg-surface-variant transition-all duration-150 font-data-mono text-data-mono uppercase" href="#">
+<span class="material-symbols-outlined">settings_input_component</span>
+                    Configurations
+                </a>
+<a class="flex items-center gap-sm px-md py-3 text-secondary hover:bg-surface-variant transition-all duration-150 font-data-mono text-data-mono uppercase" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+                    Setup Guides
+                </a>
+<a class="flex items-center gap-sm px-md py-3 text-secondary hover:bg-surface-variant transition-all duration-150 font-data-mono text-data-mono uppercase" href="#">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+                    Fleet Management
+                </a>
+<a class="flex items-center gap-sm px-md py-3 bg-primary-container text-on-primary-container border-l-4 border-primary font-bold font-data-mono text-data-mono uppercase" href="#">
+<span class="material-symbols-outlined">quiz</span>
+                    Hardware FAQ
+                </a>
+</nav>
+<div class="px-md mt-auto pt-md border-t border-outline-variant space-y-2">
+<button class="w-full bg-primary-container text-on-primary-container py-3 font-label-caps text-label-caps active:brightness-125 transition-all">
+                    NEW CONFIG
+                </button>
+<div class="flex flex-col gap-1 py-sm">
+<a class="flex items-center gap-sm px-md py-2 text-secondary hover:bg-surface-variant font-data-mono text-data-mono" href="#">
+<span class="material-symbols-outlined text-[18px]">support_agent</span> SUPPORT
+                    </a>
+<a class="flex items-center gap-sm px-md py-2 text-secondary hover:bg-surface-variant font-data-mono text-data-mono" href="#">
+<span class="material-symbols-outlined text-[18px]">terminal</span> LOGS
+                    </a>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto bg-background">
+<!-- Hero Breadcrumb / Title -->
+<div class="p-gutter lg:p-xl border-b border-outline-variant bg-surface-container-low">
+<div class="flex items-center gap-xs font-data-mono text-[11px] text-secondary-container uppercase mb-md">
+<span>Hardware FAQ</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary">Gimbal Troubleshooting</span>
+</div>
+<h1 class="font-display-xl text-display-xl text-on-surface mb-sm">GIMBAL STABILIZATION &amp; MOTOR BALANCING</h1>
+<p class="text-secondary max-w-2xl font-body-md opacity-80">Advanced procedures for neutralizing micro-vibrations and optimizing motor PID loops for heavy payload configurations.</p>
+</div>
+<!-- Content Grid -->
+<div class="p-gutter lg:p-xl space-y-xl max-w-5xl mx-auto">
+<!-- Section: Technical Readout Style -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container border border-outline-variant p-md relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-2 opacity-20">
+<span class="material-symbols-outlined text-display-xl">precision_manufacturing</span>
+</div>
+<p class="font-label-caps text-label-caps text-secondary uppercase mb-sm">Current Spec</p>
+<h3 class="font-data-mono text-display-xl text-primary leading-none">0.02<span class="text-label-caps text-[14px] ml-1">DEG</span></h3>
+<p class="font-data-mono text-[12px] text-secondary mt-md">MAX DRIFT TOLERANCE</p>
+<div class="mt-md h-1 bg-surface-variant">
+<div class="h-full bg-primary w-3/4"></div>
+</div>
+</div>
+<div class="bg-surface-container border border-outline-variant p-md relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-2 opacity-20">
+<span class="material-symbols-outlined text-display-xl">bolt</span>
+</div>
+<p class="font-label-caps text-label-caps text-secondary uppercase mb-sm">Motor Power</p>
+<h3 class="font-data-mono text-display-xl text-primary leading-none">85<span class="text-label-caps text-[14px] ml-1">%</span></h3>
+<p class="font-data-mono text-[12px] text-secondary mt-md">PAYLOAD EFFICIENCY</p>
+<div class="mt-md h-1 bg-surface-variant">
+<div class="h-full bg-primary w-[85%]"></div>
+</div>
+</div>
+<div class="bg-surface-container border border-outline-variant p-md relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-2 opacity-20">
+<span class="material-symbols-outlined text-display-xl">thermostat</span>
+</div>
+<p class="font-label-caps text-label-caps text-secondary uppercase mb-sm">Thermal Status</p>
+<h3 class="font-data-mono text-display-xl text-primary leading-none">42<span class="text-label-caps text-[14px] ml-1">°C</span></h3>
+<p class="font-data-mono text-[12px] text-secondary mt-md">OPERATIONAL TEMP</p>
+<div class="mt-md h-1 bg-surface-variant">
+<div class="h-full bg-primary w-1/2"></div>
+</div>
+</div>
+</section>
+<!-- Technical Guide Article -->
+<article class="prose prose-invert max-w-none space-y-lg">
+<div class="flex items-center justify-between py-md border-b border-outline-variant">
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight">Phase 1: Axis Neutralization</h2>
+<div class="flex gap-sm">
+<span class="bg-surface-variant px-2 py-1 font-data-mono text-[10px] text-secondary border border-outline-variant uppercase">Updated: 04.22.24</span>
+<span class="bg-primary-container px-2 py-1 font-data-mono text-[10px] text-on-primary-container border border-primary uppercase">Critical Task</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-start">
+<div class="space-y-md">
+<p class="text-on-surface opacity-90 leading-relaxed">
+                                Precise balancing is the foundation of high-performance gimbal operation. Before engaging the FLOW-RIG auto-tune algorithms, ensure the camera payload is physically neutral across all three axes. A "dead-stick" test should result in zero pendulum effect when the rig is powered down.
+                            </p>
+<ul class="space-y-sm">
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px] mt-1">check_circle</span>
+<span class="text-on-surface">Slide the tilt axis bracket until the lens remains level at 45° vertical tilt.</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px] mt-1">check_circle</span>
+<span class="text-on-surface">Adjust the roll arm to counteract side-heavy wireless transmitters or follow-focus motors.</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px] mt-1">check_circle</span>
+<span class="text-on-surface">Ensure the pan axis is perfectly vertical relative to the sled post.</span>
+</li>
+</ul>
+<div class="bg-surface-container-highest p-md border-l-4 border-primary">
+<p class="font-data-mono text-data-mono text-primary mb-xs">TECH NOTE #884</p>
+<p class="text-on-surface text-[14px]">Avoid balancing with lens caps or filters removed if they will be used during flight. Every gram shifts the motor COG (Center of Gravity).</p>
+</div>
+</div>
+<div class="bg-surface-container border border-outline-variant p-sm">
+<img alt="Gimbal Balancing Procedure" class="w-full grayscale brightness-75 hover:grayscale-0 transition-all duration-500" data-alt="A professional heavy-duty cinema gimbal rig mounted on a tripod in a dimly lit industrial studio space. The camera is a high-end digital cinema body with a large prime lens and various wireless peripherals attached. Metallic components reflect sharp, high-contrast studio lights against a dark, tech-focused background, emphasizing engineering precision and rugged industrial design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYVMNv9jHSCujU7-elwpRhYQgNqY2PWfVpUoB6L71HCbCNT-XCp2UyQXOTs-KODEUmr2JuVHMscMO5Z-n9ZC_W9xeJOepvdozUpTMJNRCjvThyPZX3UedYx2xKozwU3VpnSRjMN7V4VxsgEU6zBtJbtEH-__9Mb-gnWXu0Af-TfWw13TOoTu1SdGFIb-OQJZ5-qCSpzdSUkllQS8LxFr_xM-6W-MbwwGVNjO8JjRWZa_9NsbFxgX269h9Zay9bmTD5dW3kVH62iRQ"/>
+<div class="p-sm flex justify-between items-center">
+<p class="font-data-mono text-[10px] text-secondary">REF-FIG-04A: AXIS ALIGNMENT MATRIX</p>
+<span class="material-symbols-outlined text-secondary text-[18px]">zoom_in</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Data-Heavy Comparison Section -->
+<section class="space-y-md">
+<h3 class="font-headline-lg text-headline-lg text-on-surface uppercase border-l-2 border-primary pl-md">Motor Specification Profiles</h3>
+<div class="overflow-x-auto border border-outline-variant">
+<table class="w-full text-left font-data-mono text-data-mono">
+<thead class="bg-surface-container-high border-b border-outline-variant">
+<tr>
+<th class="p-md text-primary font-label-caps">MOTOR CLASS</th>
+<th class="p-md text-primary font-label-caps">TORQUE (Nm)</th>
+<th class="p-md text-primary font-label-caps">VOLTAGE</th>
+<th class="p-md text-primary font-label-caps">MAX PAYLOAD</th>
+<th class="p-md text-primary font-label-caps">STATUS</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-variant transition-colors">
+<td class="p-md">X-TITAN 5000</td>
+<td class="p-md">4.2</td>
+<td class="p-md">24V DC</td>
+<td class="p-md">15.0 KG</td>
+<td class="p-md"><span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> NOMINAL</span></td>
+</tr>
+<tr class="hover:bg-surface-variant transition-colors">
+<td class="p-md">X-ATLAS 2000</td>
+<td class="p-md">2.8</td>
+<td class="p-md">18V DC</td>
+<td class="p-md">8.5 KG</td>
+<td class="p-md"><span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-primary"></span> NOMINAL</span></td>
+</tr>
+<tr class="hover:bg-surface-variant transition-colors">
+<td class="p-md">X-PULSE 500</td>
+<td class="p-md">1.1</td>
+<td class="p-md">12V DC</td>
+<td class="p-md">2.5 KG</td>
+<td class="p-md"><span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-error"></span> SERVICE REQ</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Feedback Section -->
+<section class="bg-surface-container p-gutter lg:p-xl space-y-lg border border-outline-variant relative">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">forum</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface uppercase">Operator Feedback</h3>
+</div>
+<!-- Comment Input -->
+<div class="space-y-md">
+<div class="bg-surface-container-lowest border border-outline-variant p-md inset-panel">
+<textarea class="w-full bg-transparent border-none focus:ring-0 font-data-mono text-data-mono text-on-surface resize-none h-24 placeholder:text-secondary-container" placeholder="ADD TECHNICAL FINDING OR RIG CONFIGURATION DATA..."></textarea>
+<div class="flex justify-between items-center mt-md pt-md border-t border-outline-variant">
+<div class="flex gap-md">
+<button class="material-symbols-outlined text-secondary hover:text-primary">attach_file</button>
+<button class="material-symbols-outlined text-secondary hover:text-primary">data_object</button>
+</div>
+<button class="bg-primary text-on-primary px-lg py-2 font-label-caps text-label-caps hover:brightness-110 active:scale-95 transition-all">
+                                    POST LOG
+                                </button>
+</div>
+</div>
+</div>
+<!-- Existing Comments -->
+<div class="space-y-gutter">
+<div class="flex gap-md border-l-2 border-outline-variant pl-md py-sm">
+<div class="w-10 h-10 bg-surface-variant shrink-0 border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">person</span>
+</div>
+<div class="space-y-xs">
+<div class="flex items-center gap-sm">
+<span class="font-data-mono text-data-mono text-primary uppercase">RIG_USER_774</span>
+<span class="font-data-mono text-[10px] text-secondary">03.15.24</span>
+</div>
+<p class="text-on-surface text-[14px]">Found that increasing D-gain on Tilt by 12% significantly reduces micro-jitters when using the Arri Signature Primes. The center of mass is slightly more forward than the software predicts.</p>
+<div class="flex gap-md mt-sm">
+<button class="flex items-center gap-1 font-data-mono text-[11px] text-secondary hover:text-primary"><span class="material-symbols-outlined text-[14px]">thumb_up</span> 14</button>
+<button class="flex items-center gap-1 font-data-mono text-[11px] text-secondary hover:text-primary"><span class="material-symbols-outlined text-[14px]">reply</span> REPLY</button>
+</div>
+</div>
+</div>
+<div class="flex gap-md border-l-2 border-outline-variant pl-md py-sm">
+<div class="w-10 h-10 bg-surface-variant shrink-0 border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">person</span>
+</div>
+<div class="space-y-xs">
+<div class="flex items-center gap-sm">
+<span class="font-data-mono text-data-mono text-primary uppercase">ALPHA_TECH_01</span>
+<span class="font-data-mono text-[10px] text-secondary">03.12.24</span>
+</div>
+<p class="text-on-surface text-[14px]">Confirmation: The firmware V2.4.0 fix for the Atlas motors resolved the low-voltage stutter issues during rapid pan movements.</p>
+<div class="flex gap-md mt-sm">
+<button class="flex items-center gap-1 font-data-mono text-[11px] text-secondary hover:text-primary"><span class="material-symbols-outlined text-[14px]">thumb_up</span> 8</button>
+<button class="flex items-center gap-1 font-data-mono text-[11px] text-secondary hover:text-primary"><span class="material-symbols-outlined text-[14px]">reply</span> REPLY</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer Shell -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant flex flex-col md:flex-row justify-between items-center px-gutter py-lg w-full gap-lg">
+<div class="flex flex-col gap-2">
+<span class="text-on-surface font-bold font-label-caps">FLOW-RIG AEROSPACE</span>
+<p class="font-label-caps text-label-caps text-secondary">©2024 FLOW-RIG AEROSPACE STABILIZATION SYSTEMS</p>
+</div>
+<div class="flex flex-wrap justify-center gap-lg">
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-primary underline transition-all" href="#">Terms of Service</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-primary underline transition-all" href="#">Telemetry Privacy</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-primary underline transition-all" href="#">Firmware Archive</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-primary underline transition-all" href="#">API Docs</a>
+</div>
+</footer>
+</main>
+</div>
+<!-- Contextual Floating Action -->
+<button class="fixed bottom-lg right-lg bg-primary-container text-on-primary-container w-14 h-14 flex items-center justify-center shadow-xl active:scale-95 transition-all md:hidden">
+<span class="material-symbols-outlined">help</span>
+</button>
+</body></html>

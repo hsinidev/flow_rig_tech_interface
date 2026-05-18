@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#1a1b1f",
+                        "on-error": "#690005",
+                        "primary-fixed": "#ffdbcf",
+                        "on-tertiary": "#2f3034",
+                        "on-primary-fixed-variant": "#832700",
+                        "on-surface": "#e2e2e2",
+                        "secondary-fixed": "#e2e2e7",
+                        "surface-bright": "#393939",
+                        "on-tertiary-fixed-variant": "#46464b",
+                        "tertiary": "#c6c6cb",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary-fixed-dim": "#c6c6cb",
+                        "on-background": "#e2e2e2",
+                        "secondary-container": "#45474b",
+                        "primary-container": "#ff5f1f",
+                        "tertiary-fixed-dim": "#c6c6cb",
+                        "primary-fixed-dim": "#ffb59c",
+                        "on-secondary-fixed": "#1a1c1f",
+                        "surface": "#131313",
+                        "on-surface-variant": "#e3bfb3",
+                        "background": "#131313",
+                        "on-secondary-fixed-variant": "#45474b",
+                        "inverse-on-surface": "#303030",
+                        "on-secondary-container": "#b4b5ba",
+                        "surface-variant": "#353535",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container-highest": "#353535",
+                        "surface-container": "#1f1f1f",
+                        "tertiary-container": "#939398",
+                        "on-primary-container": "#561700",
+                        "error-container": "#93000a",
+                        "on-secondary": "#2f3034",
+                        "on-primary": "#5c1900",
+                        "secondary": "#c6c6cb",
+                        "surface-container-low": "#1b1b1b",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "outline": "#aa897f",
+                        "tertiary-fixed": "#e3e2e7",
+                        "surface-dim": "#131313",
+                        "primary": "#ffb59c",
+                        "inverse-surface": "#e2e2e2",
+                        "outline-variant": "#5b4138",
+                        "inverse-primary": "#ab3600",
+                        "on-primary-fixed": "#390c00",
+                        "surface-tint": "#ffb59c",
+                        "on-tertiary-container": "#2b2c30"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "sm": "8px",
+                        "margin": "24px",
+                        "unit": "4px",
+                        "md": "16px",
+                        "gutter": "16px",
+                        "xs": "4px",
+                        "xl": "40px"
+                    },
+                    "fontFamily": {
+                        "data-mono": ["Space Grotesk"],
+                        "label-caps": ["Space Grotesk"],
+                        "headline-lg": ["Inter"],
+                        "display-xl": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "data-mono": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-lg": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .inset-bevel {
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05), inset 0 -1px 1px rgba(0, 0, 0, 0.3);
+        }
+        .metallic-gradient {
+            background: linear-gradient(180deg, #D1D1D6 0%, #8E8E93 100%);
+        }
+        .safety-orange-glow {
+            box-shadow: 0 0 15px rgba(255, 95, 31, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<div class="flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<aside class="flex flex-col h-full py-md gap-sm bg-surface-container dark:bg-surface-container docked h-screen left-0 w-64 border-r border-outline-variant dark:border-outline-variant flat no shadows">
+<div class="px-md mb-lg">
+<div class="font-label-caps text-label-caps text-on-surface">CONTROL PANEL</div>
+<div class="text-[10px] font-data-mono text-secondary opacity-50 tracking-tighter">V2.4.0-STABLE</div>
+</div>
+<nav class="flex-1 space-y-1">
+<div class="flex items-center px-md py-sm gap-sm text-secondary dark:text-secondary hover:bg-surface-variant transition-all duration-150 cursor-pointer active:brightness-125 font-data-mono text-data-mono uppercase">
+<span class="material-symbols-outlined">monitoring</span> Telemetry
+                </div>
+<div class="flex items-center px-md py-sm gap-sm bg-primary-container text-on-primary-container border-l-4 border-primary font-bold transition-all duration-150 cursor-pointer active:brightness-125 font-data-mono text-data-mono uppercase">
+<span class="material-symbols-outlined">settings_input_component</span> Configurations
+                </div>
+<div class="flex items-center px-md py-sm gap-sm text-secondary dark:text-secondary hover:bg-surface-variant transition-all duration-150 cursor-pointer active:brightness-125 font-data-mono text-data-mono uppercase">
+<span class="material-symbols-outlined">menu_book</span> Setup Guides
+                </div>
+<div class="flex items-center px-md py-sm gap-sm text-secondary dark:text-secondary hover:bg-surface-variant transition-all duration-150 cursor-pointer active:brightness-125 font-data-mono text-data-mono uppercase">
+<span class="material-symbols-outlined">precision_manufacturing</span> Fleet Management
+                </div>
+<div class="flex items-center px-md py-sm gap-sm text-secondary dark:text-secondary hover:bg-surface-variant transition-all duration-150 cursor-pointer active:brightness-125 font-data-mono text-data-mono uppercase">
+<span class="material-symbols-outlined">quiz</span> Hardware FAQ
+                </div>
+</nav>
+<div class="px-md mt-auto pt-md border-t border-outline-variant/30">
+<button class="w-full bg-primary-container text-on-primary-container font-label-caps text-label-caps py-md rounded-none hover:brightness-110 active:scale-95 transition-all">
+                    NEW CONFIG
+                </button>
+</div>
+<footer class="mt-md space-y-1">
+<div class="flex items-center px-md py-xs gap-sm text-secondary hover:bg-surface-variant transition-all cursor-pointer font-data-mono text-[12px] uppercase">
+<span class="material-symbols-outlined text-[18px]">support_agent</span> Support
+                </div>
+<div class="flex items-center px-md py-xs gap-sm text-secondary hover:bg-surface-variant transition-all cursor-pointer font-data-mono text-[12px] uppercase">
+<span class="material-symbols-outlined text-[18px]">terminal</span> Logs
+                </div>
+</footer>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col overflow-y-auto">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center h-16 px-gutter w-full sticky top-0 z-50 bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline-variant bg-gradient-to-b from-surface-container-high to-surface flat no shadows">
+<div class="flex items-center gap-md">
+<span class="font-label-caps text-label-caps tracking-widest text-primary dark:text-primary">FLOW-RIG</span>
+<div class="h-4 w-[1px] bg-outline-variant"></div>
+<span class="font-headline-lg text-headline-lg text-primary">RIG CONFIGURATOR</span>
+</div>
+<div class="flex-1 max-w-md mx-xl">
+<div class="relative flex items-center bg-surface-container-low px-md h-10 border border-outline-variant/50">
+<span class="material-symbols-outlined text-secondary mr-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-data-mono text-sm w-full placeholder:text-outline/50" placeholder="SEARCH HARDWARE MANIFEST..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-gutter">
+<button class="material-symbols-outlined text-secondary hover:text-primary transition-colors active:scale-95">settings</button>
+<button class="material-symbols-outlined text-secondary hover:text-primary transition-colors active:scale-95">notifications</button>
+<button class="material-symbols-outlined text-secondary hover:text-primary transition-colors active:scale-95">account_circle</button>
+</div>
+</header>
+<div class="p-gutter space-y-gutter">
+<!-- Hero Section: Active Rig Detail -->
+<section class="grid grid-cols-12 gap-gutter">
+<!-- High-Res Imagery Module -->
+<div class="col-span-8 bg-surface-container border border-outline-variant relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full p-md z-10 flex justify-between items-start">
+<div>
+<h2 class="font-display-xl text-display-xl text-on-surface uppercase">Handheld Pro</h2>
+<p class="font-data-mono text-primary bg-background/80 px-xs inline-block">SYSTEM STATUS: OPTIMIZED</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-caps text-label-caps text-outline">LATEST VERSION</span>
+<span class="font-data-mono text-on-surface">V4.1.2-BETA</span>
+</div>
+</div>
+<div class="h-[480px] w-full bg-surface-container-lowest flex items-center justify-center">
+<img class="object-contain h-full w-full opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="A professional high-performance camera stabilizer rig with multiple handles and mounting points, showcased in a clinical studio setting. The lighting is high-contrast with deep shadows and sharp highlights reflecting off the carbon fiber and machined aluminum components. The overall aesthetic is dark and technical, emphasizing precision engineering and aerospace-grade materials. The color palette is dominated by matte blacks and brushed steel, with subtle orange LED indicators visible." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMmxJY2gu32_LioBHtjcVIH0cf-Nv4P9-lLHaMM6R50r88K4vJv2eJv6v_TAIPJO2xwLiEF-BYrcADPMybuPFLpxJtw6tVJNzNBNJf6oFbjKvi-g4RyLKsmvyfTW3_WOqH-NS6kMaHVPXWjjjaMbZqJzfkAv3albIgip8Gh-OQQ7_ZVTyO1D2m_cFoArHj6yQLh0VWI1PDhFilb1jKCE34LznCSzuvSAa_5thVAYuVe7jKHy_6ghTlqQ8K5F3FVMF-s8uzwY2Y6RI"/>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-md bg-gradient-to-t from-background to-transparent flex gap-md">
+<div class="bg-surface/80 border border-outline-variant p-sm backdrop-blur-md">
+<p class="text-[10px] font-label-caps text-outline">MAX PAYLOAD</p>
+<p class="font-data-mono text-on-surface">12.5 KG</p>
+</div>
+<div class="bg-surface/80 border border-outline-variant p-sm backdrop-blur-md">
+<p class="text-[10px] font-label-caps text-outline">AXIS STABILITY</p>
+<p class="font-data-mono text-on-surface">0.001° ERR</p>
+</div>
+<div class="bg-surface/80 border border-outline-variant p-sm backdrop-blur-md">
+<p class="text-[10px] font-label-caps text-outline">RUN TIME</p>
+<p class="font-data-mono text-on-surface">180 MIN</p>
+</div>
+</div>
+</div>
+<!-- Technical Readout / Analytics -->
+<div class="col-span-4 flex flex-col gap-gutter">
+<div class="flex-1 bg-surface-container border border-outline-variant p-md">
+<div class="flex justify-between items-center mb-md border-b border-outline-variant pb-xs">
+<h3 class="font-label-caps text-label-caps">LIVE PAYLOAD ANALYTICS</h3>
+<span class="material-symbols-outlined text-primary text-sm">sensors</span>
+</div>
+<div class="space-y-md">
+<div>
+<div class="flex justify-between font-data-mono text-xs mb-1">
+<span>ROLL TENSION</span>
+<span class="text-primary">82%</span>
+</div>
+<div class="h-1 w-full bg-surface-variant overflow-hidden">
+<div class="h-full bg-primary" style="width: 82%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-data-mono text-xs mb-1">
+<span>PITCH TORQUE</span>
+<span class="text-primary">45%</span>
+</div>
+<div class="h-1 w-full bg-surface-variant overflow-hidden">
+<div class="h-full bg-primary" style="width: 45%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-data-mono text-xs mb-1">
+<span>YAW DAMPING</span>
+<span class="text-primary">67%</span>
+</div>
+<div class="h-1 w-full bg-surface-variant overflow-hidden">
+<div class="h-full bg-primary" style="width: 67%"></div>
+</div>
+</div>
+</div>
+<div class="mt-lg p-sm border border-primary/30 bg-primary/5">
+<p class="font-label-caps text-[10px] text-primary">VIBRATION WARNING</p>
+<p class="text-xs font-data-mono">Z-AXIS RESONANCE DETECTED AT 400HZ. CHECK MOTOR MOUNTS.</p>
+</div>
+</div>
+<div class="h-48 bg-surface-container border border-outline-variant p-md flex flex-col">
+<h3 class="font-label-caps text-label-caps mb-sm">SCHEMATIC OVERLAY</h3>
+<div class="flex-1 bg-surface-container-lowest border border-outline-variant/30 relative flex items-center justify-center">
+<span class="material-symbols-outlined text-surface-variant text-6xl">architecture</span>
+<div class="absolute inset-0 bg-[radial-gradient(circle,transparent_20%,#131313_100%)] opacity-50"></div>
+<div class="absolute top-2 left-2 font-data-mono text-[9px] text-outline/50">WIRING_DIAGRAM_V4.PDF</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Catalog Grid -->
+<section>
+<div class="flex items-center gap-md mb-md">
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">Hardware Catalog</h2>
+<div class="flex-1 h-[1px] bg-outline-variant"></div>
+</div>
+<div class="grid grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-surface-container border border-outline-variant hover:border-primary transition-colors group cursor-pointer">
+<div class="h-40 bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A specialized car-mount camera gimbal system designed for high-speed tracking shots. The rig features multiple industrial suction cups and a complex lattice of aluminum tubes. The lighting is dramatic, suggesting a sunset environment with warm golden highlights on the metallic surfaces. The camera mounted is a high-end cinema model with large lenses, emphasizing heavy-duty performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5PiCkJslbiZR3g625rUi5Gc--xz4G0P69Hpam54ldMDrMXyvyejuHAr2V0QWZiWN6vHGv2c4m6HGs6AAwqyGKoc9d9FRBpt_K1pDpqrwx9qmnXiYz_cw-eBhxCErtp4iz8x6_sRi2F79ljSe-tKOiWrpeSRWUZJ37v_93lZeP9akPd_KFffVmIVAqFmXMiTMStjvHStKB1TD5ev37R_Qdw0QU4EG4Zlt0Tu7r2HPPPxw4QaJBxqTpxpUfGciyLTzcI_y4C9gqeuM"/>
+</div>
+<div class="p-md">
+<div class="flex justify-between items-start mb-sm">
+<h4 class="font-headline-lg text-lg uppercase">Car-Mount Matrix</h4>
+<span class="font-data-mono text-xs text-primary">NEW</span>
+</div>
+<p class="text-xs text-secondary mb-md h-8 overflow-hidden">Extreme stability for high-speed vehicle tracking and pursuit cinematography.</p>
+<div class="flex justify-between items-center">
+<span class="font-data-mono text-sm">25 KG CAPACITY</span>
+<button class="bg-outline-variant/20 border border-outline-variant text-[10px] px-sm py-1 font-label-caps hover:bg-primary-container hover:text-on-primary-container transition-colors">SELECT</button>
+</div>
+</div>
+</div>
+<!-- Card 2 (Active Style) -->
+<div class="bg-surface-container border-2 border-primary relative">
+<div class="absolute top-0 right-0 bg-primary text-on-primary px-sm py-xs font-label-caps text-[10px]">CURRENTLY LOADED</div>
+<div class="h-40 bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Detailed view of the Handheld Pro stabilizer rig components, focusing on the carbon fiber handles and the precision motor housings. Professional cinematic lighting reveals the fine textures of the materials. The setting is a minimalist technical workspace. The colors are muted except for small orange status indicators." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjWEtHV-Fmvv1HUYl2Jhdz3rWR4dGNvi6ZCElZxQwcW5sYy8FDKFrElG8OzJmLxqAHFiSpFS4vFlkrCz2-2okqhwCmZOBYYjxmZQtXjcFZvE0hXUcA2IWE9kSCMWvJlnEFwA4th9WIIDo07_myZIVTq4tOdAwXf3dg89GMvtvPWb8260Od8J164NL2fQjw5WmO3VwDmjf270Zvb_nIBlmkdkOohKUj7xl6AwVw5qCegVvrFzntWEfwRpkTcwDCUUJfRTeDqpp-NXs"/>
+</div>
+<div class="p-md">
+<div class="flex justify-between items-start mb-sm">
+<h4 class="font-headline-lg text-lg uppercase">Handheld Pro</h4>
+<span class="font-data-mono text-xs text-primary">ACTIVE</span>
+</div>
+<p class="text-xs text-secondary mb-md h-8 overflow-hidden">The industry standard for lightweight, agile handheld cinematography.</p>
+<div class="flex justify-between items-center">
+<span class="font-data-mono text-sm">12.5 KG CAPACITY</span>
+<button class="bg-primary text-on-primary text-[10px] px-sm py-1 font-label-caps">CONFIGURE</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container border border-outline-variant hover:border-primary transition-colors group cursor-pointer">
+<div class="h-40 bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A helmet-mounted camera rig system designed for first-person perspective filming. The rig is attached to a tactical matte black helmet and features ultra-lightweight carbon fiber rods. The background is a dark studio with blue and white rim lighting on the equipment, emphasizing its high-tech, futuristic design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRQlrs16o-H624_Y5-VBL21d7UpptdXSOKXc_KlbWbpv-DbC1pZwDHn79WBIDhcn4tZDtbkW2-dEod3XGBaEggMezUQVDCG92XFifBqfBikjpOFBK_sSFkOLuLlbPVEhkussuBKURIR1iWbz6tJ3_vflqxM_8DH8LhKYrPxtE1kXUFiZqZc5milmBFyYZcZS2vTWHxSkcZMxvAiJvFYOBkOOUjUi2ct-SgaQpTNUdVtGxQiKLpI1UETzHWzmTvMr_eVkdsgGh-u84"/>
+</div>
+<div class="p-md">
+<div class="flex justify-between items-start mb-sm">
+<h4 class="font-headline-lg text-lg uppercase">Helmet-Rig Delta</h4>
+<span class="font-data-mono text-xs text-outline">STABLE</span>
+</div>
+<p class="text-xs text-secondary mb-md h-8 overflow-hidden">Zero-latency POV capture system for intense action and sports sequences.</p>
+<div class="flex justify-between items-center">
+<span class="font-data-mono text-sm">4.5 KG CAPACITY</span>
+<button class="bg-outline-variant/20 border border-outline-variant text-[10px] px-sm py-1 font-label-caps hover:bg-primary-container hover:text-on-primary-container transition-colors">SELECT</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Community & Discussion Section -->
+<section class="grid grid-cols-12 gap-gutter">
+<div class="col-span-8 bg-surface-container-low border border-outline-variant">
+<div class="p-md border-b border-outline-variant flex justify-between items-center bg-surface-container-high">
+<h3 class="font-label-caps text-label-caps">COMMUNITY CONFIGURATIONS &amp; DEPLOYMENTS</h3>
+<div class="flex gap-sm">
+<span class="bg-primary/20 text-primary px-xs font-data-mono text-[10px]">24 NEW COMMENTS</span>
+</div>
+</div>
+<div class="divide-y divide-outline-variant/30">
+<!-- Comment 1 -->
+<div class="p-md flex gap-md">
+<div class="w-10 h-10 bg-outline-variant flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-surface">person</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-xs">
+<span class="font-data-mono text-sm text-on-surface">OPERATOR_JAX</span>
+<span class="text-[10px] text-outline font-data-mono">2H AGO</span>
+</div>
+<p class="text-sm text-secondary mb-sm italic">"Testing Handheld Pro with Alexa Mini LF + Atlas Orion Anamorphics. Total weight is 11.8kg. Motor jitter detected on tilt axis when pan speed exceeds 120deg/s. Recommending firmware V4.1.2 for better torque compensation."</p>
+<div class="flex gap-md">
+<button class="text-[10px] font-label-caps text-primary hover:underline">UPVOTE (12)</button>
+<button class="text-[10px] font-label-caps text-outline hover:underline">REPLY</button>
+</div>
+</div>
+</div>
+<!-- Comment 2 -->
+<div class="p-md flex gap-md">
+<div class="w-10 h-10 bg-outline-variant flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-surface">person</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-xs">
+<span class="font-data-mono text-sm text-on-surface">TECH_LEAD_SOLO</span>
+<span class="text-[10px] text-outline font-data-mono">5H AGO</span>
+</div>
+<p class="text-sm text-secondary mb-sm italic">"Successfully deployed the Helmet-Rig Delta for the desert sequence. The carbon rods held up perfectly against 40mph winds. Suggest using the counter-weight plate B for balanced POV when using the Komodo sensor."</p>
+<div class="flex gap-md">
+<button class="text-[10px] font-label-caps text-primary hover:underline">UPVOTE (8)</button>
+<button class="text-[10px] font-label-caps text-outline hover:underline">REPLY</button>
+</div>
+</div>
+</div>
+</div>
+<div class="p-md bg-surface-container border-t border-outline-variant">
+<textarea class="w-full bg-background border border-outline-variant p-sm text-sm font-data-mono focus:border-primary focus:ring-1 focus:ring-primary h-20 resize-none" placeholder="ADD TECHNICAL NOTES ON THIS CONFIGURATION..."></textarea>
+<div class="flex justify-end mt-sm">
+<button class="bg-primary text-on-primary font-label-caps text-[12px] px-lg py-sm">POST LOG</button>
+</div>
+</div>
+</div>
+<!-- Side Stats / Quick Actions -->
+<div class="col-span-4 flex flex-col gap-gutter">
+<div class="bg-surface-container border border-outline-variant p-md">
+<h3 class="font-label-caps text-label-caps mb-md">POPULAR COMBINATIONS</h3>
+<ul class="space-y-sm">
+<li class="flex items-center justify-between p-xs border border-outline-variant/30 hover:bg-surface-variant transition-colors cursor-pointer">
+<span class="font-data-mono text-xs">RED V-RAPTOR + 35mm PRIME</span>
+<span class="material-symbols-outlined text-sm text-primary">arrow_forward</span>
+</li>
+<li class="flex items-center justify-between p-xs border border-outline-variant/30 hover:bg-surface-variant transition-colors cursor-pointer">
+<span class="font-data-mono text-xs">SONY VENICE 2 + ZOOM 24-70</span>
+<span class="material-symbols-outlined text-sm text-primary">arrow_forward</span>
+</li>
+<li class="flex items-center justify-between p-xs border border-outline-variant/30 hover:bg-surface-variant transition-colors cursor-pointer">
+<span class="font-data-mono text-xs">BMPCC 6K + VEST MOUNT</span>
+<span class="material-symbols-outlined text-sm text-primary">arrow_forward</span>
+</li>
+</ul>
+</div>
+<div class="flex-1 bg-surface-container-highest border border-outline-variant p-md relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="font-label-caps text-label-caps text-on-surface mb-xs">FIRMWARE ARCHIVE</h3>
+<p class="text-[10px] text-outline mb-md uppercase">Critical updates for sensor stabilization</p>
+<button class="w-full border border-primary text-primary font-label-caps py-sm text-[12px] hover:bg-primary/10 transition-colors">ACCESS REPOSITORY</button>
+</div>
+<span class="material-symbols-outlined absolute -bottom-4 -right-4 text-9xl text-on-surface/5 rotate-12">history</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer -->
+<footer class="flex justify-between items-center px-gutter py-sm w-full bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant dark:border-outline-variant flat no shadows">
+<div class="font-label-caps text-label-caps text-secondary dark:text-secondary">
+                    ©2024 <span class="text-on-surface-variant font-bold">FLOW-RIG AEROSPACE STABILIZATION SYSTEMS</span>
+</div>
+<div class="flex gap-lg">
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-primary underline transition-all" href="#">Terms of Service</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-primary underline transition-all" href="#">Telemetry Privacy</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-primary underline transition-all" href="#">Firmware Archive</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-primary underline transition-all" href="#">API Docs</a>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

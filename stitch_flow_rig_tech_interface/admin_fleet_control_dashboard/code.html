@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#1a1b1f",
+                    "on-error": "#690005",
+                    "primary-fixed": "#ffdbcf",
+                    "on-tertiary": "#2f3034",
+                    "on-primary-fixed-variant": "#832700",
+                    "on-surface": "#e2e2e2",
+                    "secondary-fixed": "#e2e2e7",
+                    "surface-bright": "#393939",
+                    "on-tertiary-fixed-variant": "#46464b",
+                    "tertiary": "#c6c6cb",
+                    "surface-container-high": "#2a2a2a",
+                    "secondary-fixed-dim": "#c6c6cb",
+                    "on-background": "#e2e2e2",
+                    "secondary-container": "#45474b",
+                    "primary-container": "#ff5f1f",
+                    "tertiary-fixed-dim": "#c6c6cb",
+                    "primary-fixed-dim": "#ffb59c",
+                    "on-secondary-fixed": "#1a1c1f",
+                    "surface": "#131313",
+                    "on-surface-variant": "#e3bfb3",
+                    "background": "#131313",
+                    "on-secondary-fixed-variant": "#45474b",
+                    "inverse-on-surface": "#303030",
+                    "on-secondary-container": "#b4b5ba",
+                    "surface-variant": "#353535",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface-container-highest": "#353535",
+                    "surface-container": "#1f1f1f",
+                    "tertiary-container": "#939398",
+                    "on-primary-container": "#561700",
+                    "error-container": "#93000a",
+                    "on-secondary": "#2f3034",
+                    "on-primary": "#5c1900",
+                    "secondary": "#c6c6cb",
+                    "surface-container-low": "#1b1b1b",
+                    "error": "#ffb4ab",
+                    "on-error-container": "#ffdad6",
+                    "outline": "#aa897f",
+                    "tertiary-fixed": "#e3e2e7",
+                    "surface-dim": "#131313",
+                    "primary": "#ffb59c",
+                    "inverse-surface": "#e2e2e2",
+                    "outline-variant": "#5b4138",
+                    "inverse-primary": "#ab3600",
+                    "on-primary-fixed": "#390c00",
+                    "surface-tint": "#ffb59c",
+                    "on-tertiary-container": "#2b2c30"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "sm": "8px",
+                    "margin": "24px",
+                    "unit": "4px",
+                    "md": "16px",
+                    "gutter": "16px",
+                    "xs": "4px",
+                    "xl": "40px"
+            },
+            "fontFamily": {
+                    "data-mono": ["Space Grotesk"],
+                    "label-caps": ["Space Grotesk"],
+                    "headline-lg": ["Inter"],
+                    "display-xl": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "data-mono": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "headline-lg": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .inset-panel {
+            box-shadow: inset 2px 2px 4px rgba(0,0,0,0.5), inset -1px -1px 1px rgba(255,255,255,0.05);
+        }
+        .machined-edge {
+            border: 1px solid #5b4138;
+            background: linear-gradient(145deg, #1f1f1f, #131313);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<div class="flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-full py-md gap-sm bg-surface-container border-r border-outline-variant w-64 shrink-0">
+<div class="px-md mb-lg">
+<div class="font-label-caps text-label-caps text-on-surface">CONTROL PANEL</div>
+<div class="text-[10px] font-data-mono text-secondary tracking-widest mt-xs">V2.4.0-STABLE</div>
+</div>
+<nav class="flex-1 space-y-1 px-sm">
+<a class="flex items-center gap-md px-md py-sm bg-primary-container text-on-primary-container border-l-4 border-primary font-bold cursor-pointer active:brightness-125 transition-all duration-150" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="font-data-mono text-data-mono uppercase">Telemetry</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-secondary hover:bg-surface-variant cursor-pointer active:brightness-125 transition-all duration-150" href="#">
+<span class="material-symbols-outlined">settings_input_component</span>
+<span class="font-data-mono text-data-mono uppercase">Configurations</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-secondary hover:bg-surface-variant cursor-pointer active:brightness-125 transition-all duration-150" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-data-mono text-data-mono uppercase">Setup Guides</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-secondary hover:bg-surface-variant cursor-pointer active:brightness-125 transition-all duration-150" href="#">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+<span class="font-data-mono text-data-mono uppercase">Fleet Management</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-secondary hover:bg-surface-variant cursor-pointer active:brightness-125 transition-all duration-150" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-data-mono text-data-mono uppercase">Hardware FAQ</span>
+</a>
+</nav>
+<div class="px-md mt-lg">
+<button class="w-full bg-primary-container text-on-primary-container py-sm font-label-caps text-label-caps hover:brightness-110 active:scale-95 transition-all">
+                    NEW CONFIG
+                </button>
+</div>
+<div class="mt-auto border-t border-outline-variant pt-md px-sm space-y-1">
+<a class="flex items-center gap-md px-md py-sm text-secondary hover:bg-surface-variant cursor-pointer transition-all" href="#">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="font-data-mono text-data-mono uppercase">Support</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-secondary hover:bg-surface-variant cursor-pointer transition-all" href="#">
+<span class="material-symbols-outlined">terminal</span>
+<span class="font-data-mono text-data-mono uppercase">Logs</span>
+</a>
+</div>
+</aside>
+<div class="flex-1 flex flex-col min-w-0">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center h-16 px-gutter w-full sticky top-0 z-50 bg-surface border-b border-outline-variant bg-gradient-to-b from-surface-container-high to-surface">
+<div class="flex items-center gap-lg">
+<div class="font-label-caps text-label-caps tracking-widest text-primary">FLOW-RIG</div>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-secondary text-sm">search</span>
+<input class="bg-surface-container-low border border-outline-variant text-on-surface font-data-mono text-[12px] pl-10 pr-4 py-1 focus:outline-none focus:border-primary w-64" placeholder="SEARCH ASSETS..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-secondary hover:text-primary transition-colors active:scale-95">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="text-secondary hover:text-primary transition-colors active:scale-95 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<button class="text-secondary hover:text-primary transition-colors active:scale-95">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto p-gutter bg-background">
+<div class="max-w-7xl mx-auto space-y-gutter">
+<!-- Header Section -->
+<div class="flex justify-between items-end">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">FLEET OVERVIEW</h1>
+<p class="font-data-mono text-[12px] text-secondary mt-1">GLOBAL SYSTEM STATUS: <span class="text-primary">NOMINAL</span></p>
+</div>
+<div class="flex gap-sm">
+<button class="bg-surface-container border border-outline-variant text-on-surface px-md py-sm font-label-caps text-label-caps hover:bg-surface-variant transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">refresh</span> SYNC FLEET
+                            </button>
+<button class="bg-primary-container text-on-primary-container px-md py-sm font-label-caps text-label-caps hover:brightness-110 active:scale-95 transition-all flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">bolt</span> GLOBAL CALIBRATION
+                            </button>
+</div>
+</div>
+<!-- Top Bento Grid: Stats & Health -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- System Health Card -->
+<div class="col-span-12 lg:col-span-8 machined-edge p-md flex flex-col gap-md">
+<div class="flex justify-between items-center border-b border-outline-variant pb-xs">
+<span class="font-label-caps text-label-caps text-secondary">LIVE TELEMETRY STATUS</span>
+<span class="font-data-mono text-[10px] text-primary">SCANNING...</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md">
+<div class="inset-panel bg-surface-container-lowest p-sm border border-outline-variant/30">
+<div class="font-label-caps text-[10px] text-secondary">ACTIVE GIMBALS</div>
+<div class="font-display-xl text-display-xl text-primary mt-xs">24<span class="text-headline-lg">/30</span></div>
+</div>
+<div class="inset-panel bg-surface-container-lowest p-sm border border-outline-variant/30">
+<div class="font-label-caps text-[10px] text-secondary">FLEET UPTIME</div>
+<div class="font-display-xl text-display-xl text-on-surface mt-xs">99.8<span class="text-headline-lg">%</span></div>
+</div>
+<div class="inset-panel bg-surface-container-lowest p-sm border border-outline-variant/30">
+<div class="font-label-caps text-[10px] text-secondary">SIGNAL STRENGTH</div>
+<div class="font-display-xl text-display-xl text-on-surface mt-xs">-42<span class="text-headline-lg">dBm</span></div>
+</div>
+<div class="inset-panel bg-surface-container-lowest p-sm border border-outline-variant/30">
+<div class="font-label-caps text-[10px] text-secondary">AVG LATENCY</div>
+<div class="font-display-xl text-display-xl text-on-surface mt-xs">0.8<span class="text-headline-lg">ms</span></div>
+</div>
+</div>
+<div class="flex-1 mt-md min-h-[160px] relative">
+<!-- Simple Graph Background Simulation -->
+<div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(#aa897f 1px, transparent 1px), linear-gradient(90deg, #aa897f 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="absolute bottom-0 left-0 w-full h-[80%] flex items-end px-sm">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path d="M0,80 Q10,75 20,85 T40,60 T60,70 T80,40 T100,50" fill="none" stroke="#ff5f1f" stroke-width="2"></path>
+<path d="M0,100 L0,80 Q10,75 20,85 T40,60 T60,70 T80,40 T100,50 L100,100 Z" fill="url(#grad1)" opacity="0.1"></path>
+<defs>
+<lineargradient id="grad1" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#ff5f1f;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#ff5f1f;stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+</div>
+</div>
+<!-- Firmware Status Card -->
+<div class="col-span-12 lg:col-span-4 machined-edge p-md flex flex-col">
+<div class="flex justify-between items-center border-b border-outline-variant pb-xs mb-md">
+<span class="font-label-caps text-label-caps text-secondary">FIRMWARE REVISION</span>
+<span class="font-data-mono text-[10px] text-on-surface">V2.4.0</span>
+</div>
+<div class="space-y-md flex-1">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 machined-edge flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">download_done</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between text-[11px] font-data-mono uppercase mb-1">
+<span>UP TO DATE</span>
+<span class="text-primary">80%</span>
+</div>
+<div class="h-1 bg-surface-container-highest w-full">
+<div class="h-full bg-primary w-[80%]"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 machined-edge flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container">pending</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between text-[11px] font-data-mono uppercase mb-1">
+<span>PENDING UPDATE</span>
+<span class="text-on-secondary-container">15%</span>
+</div>
+<div class="h-1 bg-surface-container-highest w-full">
+<div class="h-full bg-on-secondary-container w-[15%]"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 machined-edge flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-error">warning</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between text-[11px] font-data-mono uppercase mb-1">
+<span>OUTDATED / ERR</span>
+<span class="text-error">5%</span>
+</div>
+<div class="h-1 bg-surface-container-highest w-full">
+<div class="h-full bg-error w-[5%]"></div>
+</div>
+</div>
+</div>
+</div>
+<button class="mt-md w-full border border-outline text-on-surface py-xs font-label-caps text-label-caps hover:bg-surface-variant transition-all">
+                                VIEW ARCHIVE
+                            </button>
+</div>
+</div>
+<!-- Bottom Grid: Fleet Management & Logs -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Asset List -->
+<div class="col-span-12 lg:col-span-8 machined-edge overflow-hidden">
+<div class="px-md py-sm border-b border-outline-variant bg-surface-container-high flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-on-surface">ACTIVE UNIT REGISTRY</span>
+<div class="flex items-center gap-md">
+<span class="font-data-mono text-[10px] text-secondary">FILTER: ALL UNITS</span>
+<span class="material-symbols-outlined text-sm cursor-pointer">filter_list</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-data-mono text-[12px]">
+<thead>
+<tr class="text-secondary border-b border-outline-variant/30">
+<th class="px-md py-sm font-normal">UNIT ID</th>
+<th class="px-md py-sm font-normal">MODEL</th>
+<th class="px-md py-sm font-normal">CONNECTION</th>
+<th class="px-md py-sm font-normal">BATT</th>
+<th class="px-md py-sm font-normal">STATUS</th>
+<th class="px-md py-sm font-normal text-right">ACTION</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20">
+<tr class="hover:bg-surface-variant/30 transition-colors">
+<td class="px-md py-md text-on-surface font-bold">FR-7712</td>
+<td class="px-md py-md text-secondary">TITAN-X</td>
+<td class="px-md py-md"><span class="flex items-center gap-1"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> 5G-UL</span></td>
+<td class="px-md py-md">88%</td>
+<td class="px-md py-md"><span class="bg-primary/10 text-primary px-2 py-0.5 border border-primary/20">ACTIVE</span></td>
+<td class="px-md py-md text-right"><span class="material-symbols-outlined cursor-pointer hover:text-primary">settings_applications</span></td>
+</tr>
+<tr class="hover:bg-surface-variant/30 transition-colors">
+<td class="px-md py-md text-on-surface font-bold">FR-7715</td>
+<td class="px-md py-md text-secondary">TITAN-X</td>
+<td class="px-md py-md"><span class="flex items-center gap-1"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> RF-433</span></td>
+<td class="px-md py-md">42%</td>
+<td class="px-md py-md"><span class="bg-primary/10 text-primary px-2 py-0.5 border border-primary/20">ACTIVE</span></td>
+<td class="px-md py-md text-right"><span class="material-symbols-outlined cursor-pointer hover:text-primary">settings_applications</span></td>
+</tr>
+<tr class="hover:bg-surface-variant/30 transition-colors">
+<td class="px-md py-md text-on-surface font-bold">FR-8001</td>
+<td class="px-md py-md text-secondary">AERO-MKII</td>
+<td class="px-md py-md"><span class="flex items-center gap-1 text-secondary opacity-50"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> OFFLINE</span></td>
+<td class="px-md py-md">--</td>
+<td class="px-md py-md"><span class="bg-surface-variant text-secondary px-2 py-0.5 border border-outline-variant/30">IDLE</span></td>
+<td class="px-md py-md text-right"><span class="material-symbols-outlined cursor-pointer hover:text-primary">settings_applications</span></td>
+</tr>
+<tr class="hover:bg-surface-variant/30 transition-colors">
+<td class="px-md py-md text-on-surface font-bold">FR-7719</td>
+<td class="px-md py-md text-secondary">TITAN-X</td>
+<td class="px-md py-md"><span class="flex items-center gap-1"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> 5G-UL</span></td>
+<td class="px-md py-md">94%</td>
+<td class="px-md py-md"><span class="bg-primary/10 text-primary px-2 py-0.5 border border-primary/20">ACTIVE</span></td>
+<td class="px-md py-md text-right"><span class="material-symbols-outlined cursor-pointer hover:text-primary">settings_applications</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Activity Logs -->
+<div class="col-span-12 lg:col-span-4 machined-edge flex flex-col bg-surface-container-lowest">
+<div class="px-md py-sm border-b border-outline-variant flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-secondary">SYSTEM LOGS</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">terminal</span>
+</div>
+<div class="flex-1 p-md font-data-mono text-[11px] space-y-md overflow-y-auto max-h-[400px]">
+<div class="flex gap-md border-l border-primary/40 pl-md py-0.5">
+<span class="text-secondary shrink-0">12:44:01</span>
+<span class="text-on-surface"><span class="text-primary font-bold">[SYS]</span> CALIBRATION SEQUENCE STARTED FOR UNIT #FR-7712</span>
+</div>
+<div class="flex gap-md border-l border-error/40 pl-md py-0.5">
+<span class="text-secondary shrink-0">12:42:30</span>
+<span class="text-on-surface"><span class="text-error font-bold">[ERR]</span> SIGNAL DROP DETECTED ON NODE #FR-8001 (TIMEOUT)</span>
+</div>
+<div class="flex gap-md border-l border-secondary/40 pl-md py-0.5">
+<span class="text-secondary shrink-0">12:40:15</span>
+<span class="text-on-surface"><span class="text-on-secondary-container font-bold">[LOG]</span> USER 'ADMIN_01' MODIFIED CONFIG: 'HIGH_WIND_STABILIZATION'</span>
+</div>
+<div class="flex gap-md border-l border-primary/40 pl-md py-0.5">
+<span class="text-secondary shrink-0">12:35:55</span>
+<span class="text-on-surface"><span class="text-primary font-bold">[SYS]</span> FIRMWARE UPDATE V2.4.0 DEPLOYED TO 12 NODES</span>
+</div>
+<div class="flex gap-md border-l border-primary/40 pl-md py-0.5">
+<span class="text-secondary shrink-0">12:30:11</span>
+<span class="text-on-surface"><span class="text-primary font-bold">[SYS]</span> GLOBAL FLEET SYNC COMPLETE</span>
+</div>
+</div>
+<div class="p-sm bg-surface-container border-t border-outline-variant">
+<button class="w-full text-center font-label-caps text-[10px] text-secondary hover:text-primary transition-colors py-1">EXPORT LOG DATA (.CSV)</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="flex justify-between items-center px-gutter py-sm w-full bg-surface-container-lowest border-t border-outline-variant">
+<div class="font-label-caps text-label-caps text-on-surface-variant font-bold">©2024 FLOW-RIG AEROSPACE STABILIZATION SYSTEMS</div>
+<div class="flex items-center gap-lg">
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-primary underline transition-all" href="#">Terms of Service</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-primary underline transition-all" href="#">Telemetry Privacy</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-primary underline transition-all" href="#">Firmware Archive</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-primary underline transition-all" href="#">API Docs</a>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

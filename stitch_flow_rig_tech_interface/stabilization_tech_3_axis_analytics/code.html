@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#ff5f1f",
+                        "inverse-surface": "#e2e2e2",
+                        "tertiary-fixed": "#e3e2e7",
+                        "on-tertiary": "#2f3034",
+                        "surface-container-lowest": "#0e0e0e",
+                        "outline": "#aa897f",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-container": "#2b2c30",
+                        "on-primary": "#5c1900",
+                        "on-secondary-fixed": "#1a1c1f",
+                        "on-error": "#690005",
+                        "surface-dim": "#131313",
+                        "primary-fixed-dim": "#ffb59c",
+                        "primary": "#ffb59c",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#303030",
+                        "on-secondary": "#2f3034",
+                        "inverse-primary": "#ab3600",
+                        "on-surface": "#e2e2e2",
+                        "on-primary-container": "#561700",
+                        "on-background": "#e2e2e2",
+                        "primary-fixed": "#ffdbcf",
+                        "surface-container-high": "#2a2a2a",
+                        "on-primary-fixed": "#390c00",
+                        "on-secondary-fixed-variant": "#45474b",
+                        "on-secondary-container": "#b4b5ba",
+                        "secondary-fixed-dim": "#c6c6cb",
+                        "on-tertiary-fixed-variant": "#46464b",
+                        "outline-variant": "#5b4138",
+                        "on-primary-fixed-variant": "#832700",
+                        "secondary-fixed": "#e2e2e7",
+                        "surface-container-low": "#1b1b1b",
+                        "background": "#131313",
+                        "secondary": "#c6c6cb",
+                        "surface-container-highest": "#353535",
+                        "surface": "#131313",
+                        "tertiary": "#c6c6cb",
+                        "surface-container": "#1f1f1f",
+                        "on-tertiary-fixed": "#1a1b1f",
+                        "tertiary-container": "#939398",
+                        "error-container": "#93000a",
+                        "surface-tint": "#ffb59c",
+                        "on-surface-variant": "#e3bfb3",
+                        "surface-bright": "#393939",
+                        "secondary-container": "#45474b",
+                        "surface-variant": "#353535",
+                        "tertiary-fixed-dim": "#c6c6cb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "xl": "40px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "gutter": "16px",
+                        "margin": "24px",
+                        "sm": "8px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "label-caps": ["Space Grotesk"],
+                        "body-md": ["Inter"],
+                        "display-xl": ["Inter"],
+                        "data-mono": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "data-mono": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .machined-edge {
+            box-shadow: inset 1px 1px 0px rgba(255,255,255,0.05), inset -1px -1px 0px rgba(0,0,0,0.5);
+        }
+        .data-grid-bg {
+            background-image: radial-gradient(circle, rgba(255, 95, 31, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .brushed-metal {
+            background: linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 50%, #1f1f1f 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Bar -->
+<header class="bg-surface-container-highest dark:bg-surface-container-highest border-b border-outline-variant bg-gradient-to-b from-surface-container-highest to-surface-container flex justify-between items-center w-full px-gutter h-16 sticky top-0 z-50">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary-container" data-icon="settings_input_component">settings_input_component</span>
+<h1 class="font-display-xl text-headline-lg font-bold text-primary-container dark:text-primary-container tracking-tighter">FLOW-RIG // PRECISION</h1>
+</div>
+<div class="flex items-center gap-lg">
+<div class="hidden md:flex gap-md">
+<span class="font-label-caps text-label-caps tracking-widest uppercase text-primary-container">TELEMETRY</span>
+<span class="font-label-caps text-label-caps tracking-widest uppercase text-on-surface-variant hover:bg-primary-container hover:text-on-primary transition-colors duration-100 cursor-pointer px-sm py-xs">RIGS</span>
+<span class="font-label-caps text-label-caps tracking-widest uppercase text-on-surface-variant hover:bg-primary-container hover:text-on-primary transition-colors duration-100 cursor-pointer px-sm py-xs">BALANCE</span>
+</div>
+<span class="material-symbols-outlined text-primary-container" data-icon="sensors">sensors</span>
+</div>
+</header>
+<main class="flex h-[calc(100vh-64px-80px)] overflow-hidden">
+<!-- Navigation Drawer (Desktop Only) -->
+<aside class="hidden md:flex flex-col h-full py-lg bg-surface-container dark:bg-surface-container w-80 border-r border-outline-variant shrink-0">
+<div class="px-lg mb-lg">
+<h2 class="font-label-caps text-on-surface text-label-caps">SYSTEM CONTROL</h2>
+</div>
+<nav class="flex flex-col">
+<div class="bg-primary-container text-on-primary-container font-bold flex items-center gap-md px-lg py-md cursor-pointer transition-all duration-150 ease-in-out">
+<span class="material-symbols-outlined" data-icon="speed">speed</span>
+<span class="font-data-mono text-data-mono uppercase">LIVE DATA</span>
+</div>
+<div class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest flex items-center gap-md px-lg py-md cursor-pointer transition-all duration-150 ease-in-out">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-data-mono text-data-mono uppercase">HARDWARE PROFILES</span>
+</div>
+<div class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest flex items-center gap-md px-lg py-md cursor-pointer transition-all duration-150 ease-in-out">
+<span class="material-symbols-outlined" data-icon="camera_roll">camera_roll</span>
+<span class="font-data-mono text-data-mono uppercase">LENS DATABASE</span>
+</div>
+<div class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest flex items-center gap-md px-lg py-md cursor-pointer transition-all duration-150 ease-in-out">
+<span class="material-symbols-outlined" data-icon="system_update_alt">system_update_alt</span>
+<span class="font-data-mono text-data-mono uppercase">FIRMWARE</span>
+</div>
+<div class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest flex items-center gap-md px-lg py-md cursor-pointer transition-all duration-150 ease-in-out">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+<span class="font-data-mono text-data-mono uppercase">SYSTEM LOGS</span>
+</div>
+</nav>
+<div class="mt-auto px-lg">
+<div class="p-md border border-outline-variant bg-surface-container-low rounded">
+<div class="flex justify-between items-center mb-xs">
+<span class="font-label-caps text-[10px] text-on-surface-variant">BATTERY PACK A</span>
+<span class="text-primary-container font-data-mono text-data-mono">98%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-[98%]"></div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area: Dashboard -->
+<section class="flex-1 p-gutter overflow-y-auto data-grid-bg">
+<div class="grid grid-cols-12 gap-md h-full">
+<!-- Live Stream Viewport (Large central block) -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest border border-outline-variant machined-edge relative group">
+<div class="absolute top-0 left-0 w-full p-md flex justify-between items-start z-10">
+<div class="bg-black/60 backdrop-blur-md border border-primary-container/30 px-md py-xs">
+<div class="flex items-center gap-xs">
+<div class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></div>
+<span class="font-data-mono text-data-mono text-primary-container">REC • 4K // 60FPS</span>
+</div>
+</div>
+<div class="flex flex-col gap-xs items-end">
+<span class="font-data-mono text-xs text-white/70">ISO 800</span>
+<span class="font-data-mono text-xs text-white/70">T 2.8</span>
+<span class="font-data-mono text-xs text-white/70">SHUTTER 180°</span>
+</div>
+</div>
+<div class="w-full h-full min-h-[400px] overflow-hidden relative">
+<img class="w-full h-full object-cover grayscale opacity-80" data-alt="A professional heavy-duty camera rig mounted on a stabilized gimbal system moving through a dark industrial warehouse. The scene is lit with moody orange sodium-vapor lights and harsh white fluorescents. The cinematography is crisp, showcasing mechanical precision and carbon fiber textures in a high-contrast environment. Technical overlays and frame guides are subtly visible." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOpiW5NMfhwt66kGKr8IGUDZLiCxNJiN7eQzgiOtiGTCIb6UtCogYrGy4_s8P8bI2exYFAibMr-LdfwjOVy3vw0AI9Tf9bCAYcFTfBQP5-m4MU4WZP6Te3fl6w46qhtBJLxsizeKz_t8EEtPZqC4BdJULlSIJHgohx-wLZubYJPMjDqU8UHsFN9Z__bNn5cJAGsHMF_DyFDBQRZFD3TB4i3MoWaGOBOMSBNdiOxp4KuSGa39rqgcCfcG8_gOKr709nlu7BJPQl4Yk"/>
+<!-- HUD Overlays -->
+<div class="absolute inset-0 pointer-events-none border-[1px] border-white/10 m-lg flex items-center justify-center">
+<div class="w-16 h-[1px] bg-primary-container/50"></div>
+<div class="h-16 w-[1px] bg-primary-container/50 absolute"></div>
+</div>
+<div class="absolute bottom-md left-md right-md flex justify-between font-data-mono text-[10px] text-white/40">
+<span>METER: SPOT</span>
+<span>LUT: FLOW_REC_709</span>
+<span>TIME: 04:22:18:12</span>
+</div>
+</div>
+<!-- Stabilization Control Overlay -->
+<div class="absolute bottom-0 left-0 w-full p-lg bg-gradient-to-t from-black/80 to-transparent flex gap-lg">
+<button class="bg-primary-container text-on-primary px-lg py-sm font-label-caps text-label-caps flex items-center gap-sm active:scale-95 duration-75">
+<span class="material-symbols-outlined" data-icon="auto_stabilization">stabilization</span>
+                            AUTO-LEVEL
+                        </button>
+<button class="border border-primary-container text-primary-container px-lg py-sm font-label-caps text-label-caps hover:bg-primary-container hover:text-on-primary transition-all active:scale-95 duration-75">
+                            LOCK AXIS
+                        </button>
+</div>
+</div>
+<!-- Right Sidebar: Readouts & Controls -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-md">
+<!-- Axis Telemetry Card -->
+<div class="bg-surface-container border border-outline-variant machined-edge p-md">
+<div class="flex items-center justify-between mb-md">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant">3-AXIS TELEMETRY</h3>
+<span class="material-symbols-outlined text-primary-container text-sm" data-icon="timeline">timeline</span>
+</div>
+<div class="space-y-md">
+<!-- PITCH -->
+<div class="space-y-xs">
+<div class="flex justify-between items-baseline">
+<span class="font-data-mono text-xs text-on-surface-variant">PITCH</span>
+<div class="flex items-baseline gap-xs">
+<span class="font-display-xl text-[32px] font-bold text-primary-container font-data-mono">14.2</span>
+<span class="font-data-mono text-[10px] text-on-surface-variant uppercase">deg</span>
+</div>
+</div>
+<div class="h-16 bg-surface-container-lowest border border-outline-variant relative overflow-hidden">
+<svg class="absolute inset-0 w-full h-full opacity-60" viewbox="0 0 100 20">
+<path d="M0 10 Q 25 15, 50 10 T 100 10" fill="none" stroke="#ff5f1f" stroke-width="0.5"></path>
+</svg>
+</div>
+</div>
+<!-- ROLL -->
+<div class="space-y-xs">
+<div class="flex justify-between items-baseline">
+<span class="font-data-mono text-xs text-on-surface-variant">ROLL</span>
+<div class="flex items-baseline gap-xs">
+<span class="font-display-xl text-[32px] font-bold text-white font-data-mono">0.0</span>
+<span class="font-data-mono text-[10px] text-on-surface-variant uppercase">deg</span>
+</div>
+</div>
+<div class="h-16 bg-surface-container-lowest border border-outline-variant relative overflow-hidden">
+<svg class="absolute inset-0 w-full h-full opacity-60" viewbox="0 0 100 20">
+<path d="M0 10 L 100 10" fill="none" stroke="#e2e2e2" stroke-width="0.5"></path>
+</svg>
+</div>
+</div>
+<!-- YAW -->
+<div class="space-y-xs">
+<div class="flex justify-between items-baseline">
+<span class="font-data-mono text-xs text-on-surface-variant">YAW</span>
+<div class="flex items-baseline gap-xs">
+<span class="font-display-xl text-[32px] font-bold text-white font-data-mono">-2.4</span>
+<span class="font-data-mono text-[10px] text-on-surface-variant uppercase">deg</span>
+</div>
+</div>
+<div class="h-16 bg-surface-container-lowest border border-outline-variant relative overflow-hidden">
+<svg class="absolute inset-0 w-full h-full opacity-60" viewbox="0 0 100 20">
+<path d="M0 10 Q 25 5, 50 10 T 100 10" fill="none" stroke="#e2e2e2" stroke-width="0.5"></path>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<!-- Motor Load Bento -->
+<div class="bg-surface-container border border-outline-variant machined-edge p-md flex-1">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-md">MOTOR EFFICIENCY</h3>
+<div class="grid grid-cols-2 gap-sm">
+<div class="bg-surface-container-low p-sm border border-outline-variant">
+<span class="font-data-mono text-[10px] text-on-surface-variant block mb-xs">PAN LOAD</span>
+<span class="font-display-xl text-headline-lg text-primary-container">12%</span>
+</div>
+<div class="bg-surface-container-low p-sm border border-outline-variant">
+<span class="font-data-mono text-[10px] text-on-surface-variant block mb-xs">TILT LOAD</span>
+<span class="font-display-xl text-headline-lg text-on-surface">44%</span>
+</div>
+<div class="bg-surface-container-low p-sm border border-outline-variant">
+<span class="font-data-mono text-[10px] text-on-surface-variant block mb-xs">TEMP (C)</span>
+<span class="font-display-xl text-headline-lg text-on-surface">32°</span>
+</div>
+<div class="bg-surface-container-low p-sm border border-outline-variant">
+<span class="font-data-mono text-[10px] text-on-surface-variant block mb-xs">VIBE-HZ</span>
+<span class="font-display-xl text-headline-lg text-primary-container">0.4</span>
+</div>
+</div>
+<div class="mt-md space-y-sm">
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-xs">DYNAMIC FOLLOW</span>
+<div class="w-10 h-5 bg-primary-container/20 border border-primary-container relative cursor-pointer">
+<div class="absolute right-1 top-1 w-2.5 h-2.5 bg-primary-container"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-data-mono text-xs">GYRO-SMOOTHING</span>
+<div class="w-10 h-5 bg-surface-container-highest border border-outline-variant relative cursor-pointer">
+<div class="absolute left-1 top-1 w-2.5 h-2.5 bg-on-surface-variant"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant fixed bottom-0 w-full z-50 h-20 flex justify-around items-center px-margin">
+<div class="flex flex-col items-center justify-center text-primary-container border-t-2 border-primary-container pt-2 pb-2 cursor-pointer hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-caps text-label-caps">TELEMETRY</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-secondary-container opacity-60 pt-2 pb-2 cursor-pointer hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span class="font-label-caps text-label-caps">RIGS</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-secondary-container opacity-60 pt-2 pb-2 cursor-pointer hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined" data-icon="balance">balance</span>
+<span class="font-label-caps text-label-caps">BALANCE</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-secondary-container opacity-60 pt-2 pb-2 cursor-pointer hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined" data-icon="settings_motion_sensor">settings_motion_mode</span>
+<span class="font-label-caps text-label-caps">CALIBRATE</span>
+</div>
+</footer>
+</body></html>
